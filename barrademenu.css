@@ -1,0 +1,98 @@
+:root{
+    --colorBranco: #fff;
+    --colorDark1: #272727;
+    --colorDark2: #2d2d2d;
+    --colorDark3: #414141;
+    --colorDark4: #1c1c1c;
+    --colorDark5: #343434;
+    --colorAzul: #3189fc;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--colorDark1);
+    color: var(--colorBranco);
+}
+
+.imagenlogo{
+    width: 45px;
+}
+
+.header,
+.navigation_header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.header{
+    background-color: var(--colorDark2);
+    box-shadow: 1px 1px 4px var(--colorBranco);
+    height: 3.5em;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+.navigation_header{
+    gap: 3em;
+    z-index: 2;
+        
+}
+
+.navigation_header a{
+    color: var(--colorAzul);
+    text-decoration: none;
+    transition: 1s;
+    font-weight: bold;
+
+}
+
+.active{
+    background-color: var(--colorDark3);
+    padding: 10px;
+    border-radius: 10px;
+}
+.content{
+    text-align: center;
+    padding-top: 5em;
+    height: 100vh;
+    transition: 1s;
+}
+.botaoDeIcone{
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+@media  screen and (max-width: 768px){
+    .botaoDeIcone{
+        display: block;
+    }
+    .navigation_header{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        background-color: var(--colorDark5);
+        height: 100%;
+        width: 35vw;
+        padding: 1em;
+        animation-duration: 1s;
+        margin-left: -100vw;
+    
+    }
+}
+    
+@keyframes showSidebar{
+    from{margin-left: -100vw;}
+    top{margin-left: -10vw;}
+
+}
+
